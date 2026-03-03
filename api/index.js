@@ -30,7 +30,7 @@ function buildRows(list) {
 
 module.exports = (req, res) => {
   const list = getBattles();
-  const template = fs.readFileSync(path.join(__dirname, 'index.html'), 'utf-8');
+  const template = fs.readFileSync(path.join(__dirname, 'template.html'), 'utf-8');
   const html = template.replace('<!--ROWS-->', buildRows(list));
   res.setHeader('Content-Type', 'text/html; charset=utf-8');
   res.send(html);
