@@ -1,9 +1,4 @@
 {
-  "functions": {
-    "api/**/*.js": {
-      "includeFiles": "battles.json,views/**"
-    }
-  },
   "rewrites": [
     { "source": "/battle/:slug", "destination": "/api/battle" },
     { "source": "/", "destination": "/api/index" }

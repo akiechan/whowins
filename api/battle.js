@@ -4,7 +4,7 @@ const path = require('path');
 let battles = null;
 function getBattles() {
   if (!battles) {
-    battles = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'battles.json'), 'utf-8'));
+    battles = JSON.parse(fs.readFileSync(path.join(__dirname, 'battles.json'), 'utf-8'));
   }
   return battles;
 }

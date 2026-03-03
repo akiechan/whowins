@@ -4,7 +4,7 @@ const path = require('path');
 let battles = null;
 function getBattles() {
   if (!battles) {
-    battles = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'battles.json'), 'utf-8'));
+    battles = JSON.parse(fs.readFileSync(path.join(__dirname, 'battles.json'), 'utf-8'));
   }
   return battles;
 }
@@ -30,7 +30,7 @@ function buildRows(list) {
 
 module.exports = (req, res) => {
   const list = getBattles();
-  const template = fs.readFileSync(path.join(__dirname, '..', 'views', 'index.html'), 'utf-8');
+  const template = fs.readFileSync(path.join(__dirname, 'index.html'), 'utf-8');
   const html = template.replace('<!--ROWS-->', buildRows(list));
   res.setHeader('Content-Type', 'text/html; charset=utf-8');
   res.send(html);
